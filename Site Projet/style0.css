@@ -190,20 +190,15 @@
   position: relative;
 }
 .frame-52 {
-  background: linear-gradient(
-    87.55deg,
-    rgba(10, 0, 62, 1) 0%,
-    rgba(235, 2, 142, 1) 100%
-  );
-  border-radius: 0.75rem;
-  padding: 0.9375rem 3.125rem 0.9375rem 3.125rem;
+  background: linear-gradient(87.55deg, rgba(10, 0, 62, 1.00) 0%, rgba(235, 2, 142, 1.00) 100%);
+  border-radius: 12px;
+  padding: 15px 50px 15px 50px;
   display: flex;
   flex-direction: row;
-  gap: 0.625rem;
+  gap: 10px;
   align-items: flex-start;
   justify-content: flex-start;
   flex-shrink: 0;
-  position: relative;
 }
 .log-in {
   color: var(--white, #fefefe);

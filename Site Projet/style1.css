@@ -1,0 +1,120 @@
+body {
+  font-family: "Roboto-bold",sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    87.55deg,
+    rgba(10, 0, 62, 1) 0%,
+    rgba(235, 2, 142, 1) 100%
+  );
+}
+
+/* Formulaire */
+.formulaire {
+  width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid linear-gradient(
+    87.55deg,
+    rgba(10, 0, 62, 1) 0%,
+    rgba(235, 2, 142, 1) 100%
+  );
+  border-radius: 4px;
+  text-align: center;
+  background-color: linear-gradient(
+    87.55deg,
+    rgba(10, 0, 62, 1) 0%,
+    rgba(235, 2, 142, 1) 100%
+  );
+}
+
+/* En-tête */
+.formulaire h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #fefefe;
+}
+
+/* Champs de saisie */
+.formulaire input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid linear-gradient(
+    87.55deg,
+    rgba(10, 0, 62, 1) 0%,
+    rgba(235, 2, 142, 1) 100%
+  );
+  border-radius: 4px;
+  background: linear-gradient(
+    87.55deg,
+    rgba(10, 0, 62, 1) 0%,
+    rgba(235, 2, 142, 1) 100%
+  );
+  ;
+}
+
+/* Checkbox */
+.formulaire label {
+  margin-right: 10px;
+  color: #fefefe;
+}
+
+.formulaire #remember-me {
+  margin-bottom: 10px;
+}
+
+/* Lien "Mot de passe oublié" */
+.formulaire a {
+  text-decoration: none;
+  color: #fefefe;
+  margin-bottom: 10px;
+}
+
+/* Bouton "Se connecter" */
+.formulaire button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #fefefe;
+  border-radius: 4px;
+  color: #fefefe;
+  background: linear-gradient(
+  87.55deg, rgba(10, 0, 62, 1.00) 0%,
+   rgba(235, 2, 142, 1.00) 100%);
+  cursor: pointer;
+}
+
+/* Séparateur */
+.formulaire hr {
+  margin: 10px 0;
+  border: 1px solid #ddd;
+}
+
+/* Paragraphe "OU" */
+.formulaire p {
+  margin: 10px 0;
+  color: #fefefe;
+}
+
+/* Bouton "S'inscrire" */
+.formulaire button[type="submit"]:last-of-type {
+  background-color: #fefefe;
+  color: #fefefe;
+}
+
+/* Focus sur les champs de saisie */
+.formulaire input:focus {
+  outline: none;
+  border-color: #fefefe;
+}
+
+/* Bouton "Se connecter" - hover */
+.formulaire button[type="submit"]:hover {
+  background-color: #fefefe;
+}
+
+/* Bouton "S'inscrire" - hover */
+.formulaire button[type="submit"]:last-of-type:hover {
+  background-color: #fefefe;
+}
