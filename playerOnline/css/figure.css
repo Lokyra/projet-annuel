@@ -50,11 +50,14 @@
   background-color: #fefefe;
 }
 
-.image {
-  aspect-ratio: 1;
-  object-fit: auto;
-  object-position: center;
-  width: 180px;
+
+.img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
 }
 .square-last {
   width: 180px;
@@ -71,6 +74,16 @@
   position: relative;
   margin-left: 50px;
 }
+.square-middle {
+
+    width: 180px;
+    height: 180px;
+    background-color: white;
+    border-radius: 6px;
+    position: relative;
+  
+  
+}
 .circle {
   width: 128px;
   height: 128px;
@@ -81,27 +94,7 @@
   left: 26px;
 }
 
-.cross {
-  width: 118px;
-  height: 118px;
-  
-  position: relative;
-}
 
-.cross::before,
-.cross::after {
-  content: "";
-  position: absolute;
-  background-color: blue;
-}
-
-.cross::before {
-  transform:  rotate(45deg);
-}
-
-.cross::after {
-  transform:  rotate(-45deg);
-}
 @media (max-width: 991px) {
   .flex-row {
     flex-direction: column;
