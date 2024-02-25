@@ -1,0 +1,88 @@
+@font-face {
+	font-family: 'Rubik';
+	font-style: bold;
+	font-weight: 400;
+	src: url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
+}
+
+.rubik-mono one-regular {
+	font-family: "Rubik Mono One", monospace;
+	font-weight: 400;
+	font-style: normal;
+  }
+  
+
+header {
+	background-color: rgba(10, 0, 62, 0.9);
+}
+  
+body {
+	font-family: 'Roboto', sans-serif;
+	color: #FFFFFF;
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(88deg, #0a003e -91.36%, #450153 114.99%);
+}
+.container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 20px;
+	padding: 20px;
+}
+.navigation {
+	display: flex;
+	gap: 20px;
+	padding: 15px 20px;
+	font-weight: 700;
+}
+.navigation-item {
+	font-size: 24px;
+}
+.logo-text {
+	font-size: 20px;
+	font-family: "Rubik Mono One", monospace;
+	font-weight: bold;
+	
+}
+.action-buttons {
+	display: flex;
+	gap: 20px;
+}
+button {
+	color : white;
+	font-family: "Rubik Mono One", monospace;
+	font-style: bold;
+	height: 50px;
+	font-size: 15px;
+}
+.login-btn {
+	background: linear-gradient(88deg, #0a003e -91.36%, #eb028e 114.99%);
+	border-radius: 12px;
+	padding: 15px 50px;
+}
+.sign-up-btn {
+	border: 3px solid #eb028e;
+	border-radius: 12px;
+	padding: 15px 50px;
+	background-color: transparent;
+}
+@media (max-width: 991px) {
+	.container, .navigation, .action-buttons {
+		flex-direction: column;
+		align-items: center;
+	}
+	.login-btn, .sign-up-btn {
+		padding: 15px 20px;
+	}
+}
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}

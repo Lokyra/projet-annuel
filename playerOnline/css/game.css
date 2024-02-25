@@ -1,0 +1,38 @@
+
+.play-options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 587px;
+    font-size: 36px;
+    color: #fefefe;
+    font-weight: 900;
+    text-align: center;
+}
+
+.play-online, .play-computer {
+    font-family: "Rubik Mono One", monospace;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    width: 100%;
+    padding: 27px 60px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.play-online {
+    background: linear-gradient(88deg, #0a003e -91.36%, #eb028e 114.99%);
+    box-shadow: 0px 11px 30px 15px rgba(10, 0, 62, 0.3);
+}
+
+.play-computer {
+    border: 5px solid #eb028e;
+    box-shadow: 0px 11px 30px 15px rgba(10, 0, 62, 0.3);
+    background-color: transparent;
+}
+
+.play-online:hover, .play-computer:hover {
+    transform: scale(1.05);
+}
