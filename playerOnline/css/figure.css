@@ -12,6 +12,10 @@
 .section-padding {
   padding: 0 20px;
 }
+.section-padding-last {
+  padding: 0 20px;
+  margin-top: 30px;
+}
 .section-padding:first-child {
   margin-top: 150px;
   margin-bottom: 30px;
@@ -52,7 +56,52 @@
   object-position: center;
   width: 180px;
 }
+.square-last {
+  width: 180px;
+  height: 180px;
+  background-color: white;
+  border-radius: 6px;
+  position: relative;
+}
+.square {
+  width: 180px;
+  height: 180px;
+  background-color: white;
+  border-radius: 6px;
+  position: relative;
+  margin-left: 50px;
+}
+.circle {
+  width: 128px;
+  height: 128px;
+  background-color: #EB028E;
+  border-radius: 50%;
+  position: absolute;
+  top: 26px;
+  left: 26px;
+}
 
+.cross {
+  width: 118px;
+  height: 118px;
+  
+  position: relative;
+}
+
+.cross::before,
+.cross::after {
+  content: "";
+  position: absolute;
+  background-color: blue;
+}
+
+.cross::before {
+  transform:  rotate(45deg);
+}
+
+.cross::after {
+  transform:  rotate(-45deg);
+}
 @media (max-width: 991px) {
   .flex-row {
     flex-direction: column;
