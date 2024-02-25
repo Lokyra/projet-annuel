@@ -94,18 +94,3 @@
   left: 26px;
 }
 
-
-@media (max-width: 991px) {
-  .flex-row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0px;
-  }
-  .flex-column {
-    margin-top: 30px;
-    width: 100%;
-  }
-  .image, .image-content {
-    margin-top: 30px;
-  }
-}
