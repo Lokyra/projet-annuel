@@ -12,7 +12,7 @@ git pull
 ```
 
 
-## Pour ajouter une fichier au repo
+## Pour ajouter/modifier un fichier au repo
 
 ```
 git add [fichier]
