@@ -43,11 +43,19 @@ body {
 	font-size: 20px;
 	font-family: "Rubik Mono One", monospace;
 	font-weight: bold;
-	
+}
+
+.centered-logo {
+	display: flex;
+	padding: 30px 10px;
+	justify-content: center;
+	align-items: center;
+	font-family: "Rubik Mono One", monospace;
+	gap: 20px;
 }
 .action-buttons {
 	display: flex;
-	gap: 20px;
+	gap: 10px;
 }
 button {
 	color : white;
@@ -55,6 +63,10 @@ button {
 	font-style: bold;
 	height: 50px;
 	font-size: 15px;
+}
+button a {
+	text-decoration: none;
+	color: inherit;
 }
 .login-btn {
 	background: linear-gradient(88deg, #0a003e -91.36%, #eb028e 114.99%);
