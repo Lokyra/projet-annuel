@@ -5,6 +5,13 @@
 git clone git@github.com:ayoubousbia7/projet-annuel.git 
 ```
 
+## Pour mettre a jour son repo local
+
+```
+git pull
+```
+
+
 ## Pour ajouter une fichier au repo
 
 ```
