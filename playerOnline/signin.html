@@ -22,20 +22,23 @@
     </header>
     <main>
         <h1 class="text">Create your<br> Tic-tac-toe<br> account</h1>
-       
-<form class="form-container">
-    <input type="text" id="userNameOrEmail" class="user-input" placeholder="User name or Email" aria-label="User name or Email">
     
-    <div>
-        <input type="password" id="password" class="password-label" placeholder="Password" aria-label="Password">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/80dbc2075c139f6272aeb91e4dcb0cf9e8f64dc5b75ab7287e73f032dd76ef1f?apiKey=1f8ddd1866a94973ad10f706c607a824&" alt="Password visibility toggle" class="password-icon">
-    </div>
-  
-    <div>
-        <input type="checkbox" id="rememberMe" class="remember-checkbox">
-        <a href="#" class="forgot-password-link">Forgot Password?</a>
-    </div>
-  </form>
+    <form action="login.php" method="post" class="container">
+        
+        <input type="text" class="user-input" placeholder="User Name or Email">
+       
+        <input type="text" class="user-input" placeholder="Password">
+      
+        <div class="remember-me">
+            <label class="checkbox-label">
+                <input type="checkbox" class="checkbox" id="rememberMe" name="rememberMe">
+                <span>Remember me</span>
+            </label>
+            <div  role="button" class="forgot-password" onclick="alert('Forgot Password?');">Forgot Password?</div>
+        </div>
+        <button class="login-btn" onclick="alert('Infos send')">Login</button>
+        <button class="login-btn"onclick="alert('Infos send')">Sign-up</button>
+    </form>
   
           
     </main>
