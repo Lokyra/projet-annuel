@@ -1,98 +1,65 @@
-@font-face {
-	font-family: 'Rubik';
-	font-style: bold;
-	font-weight: 400;
-	src: url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
+
+.play-options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 587px;
+    font-size: 36px;
+    color: #fefefe;
+    font-weight: 900;
+    text-align: center;
 }
 
-.rubik-mono one-regular {
-	font-family: "Rubik Mono One", monospace;
-	font-weight: 400;
-	font-style: normal;
-}
-  
-header {
-	background-color: rgba(10, 0, 62, 0.9);
-}
-  
-body {
-	font-family: 'Roboto', sans-serif;
-	color: #FFFFFF;
-	margin: 0;
-	padding: 0;
-	background: linear-gradient(88deg, #0a003e -91.36%, #450153 114.99%);
-}
-.container {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	gap: 20px;
-	padding: 20px;
-}
-.navigation {
-	display: flex;
-	gap: 20px;
-	padding: 15px 20px;
-	font-weight: 700;
-}
-.navigation-item {
-	font-size: 24px;
-}
-.logo-text {
-	font-size: 20px;
-	font-family: "Rubik Mono One", monospace;
-	font-weight: bold;
+.play-online, .play-computer {
+    font-family: "Rubik Mono One", monospace;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    width: 100%;
+    padding: 27px 60px;
+    margin-top: 20px;
+    margin-left: 1900px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.centered-logo {
-	display: flex;
-	padding: 30px 10px;
-	justify-content: center;
-	align-items: center;
-	font-family: "Rubik Mono One", monospace;
-	gap: 20px;
+.play-online {
+    background: linear-gradient(88deg, #0a003e -91.36%, #eb028e 114.99%);
+    box-shadow: 0px 11px 30px 15px rgba(10, 0, 62, 0.3);
+    margin-top: -200px;
+    color: var(--White, #FEFEFE);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-decoration: none;
 }
-.action-buttons {
-	display: flex;
-	gap: 10px;
+
+.play-computer {
+    border: 5px solid #eb028e;
+    box-shadow: 0px 11px 30px 15px rgba(10, 0, 62, 0.3);
+    background-color: transparent;
+    color: var(--White, #FEFEFE);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-decoration: none;
 }
-button {
-	color : white;
-	font-family: "Rubik Mono One", monospace;
-	font-style: bold;
-	height: 50px;
-	font-size: 15px;
-}
-button a {
-	text-decoration: none;
-	color: inherit;
-}
-.login-btn {
-	background: linear-gradient(88deg, #0a003e -91.36%, #eb028e 114.99%);
-	border-radius: 12px;
-	padding: 15px 50px;
-	text-align: center;
-	color: var(--White, #FEFEFE);
-	font-family: Roboto;
-	font-size: 24px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: normal;
-	text-decoration: none;
-}
-.login-btn:hover, .sign-up-btn:hover {
+
+.play-online:hover, .play-computer:hover {
     transform: scale(1.05);
 }
-.sign-up-btn {
-	border: 3px solid #eb028e;
-	border-radius: 12px;
-	padding: 15px 50px;
-	background-color: transparent;
-	color: var(--White, #FEFEFE);
-	font-family: Roboto;
-	font-size: 24px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: normal;
-	text-decoration: none;
+
+.game-title {
+    color: #fefefe;
+    font-size: 80px;
+    font-family: "Rubik Mono One", monospace;
+
+    margin-left: 950px;
+    margin-top: -600px;  
 }
