@@ -71,10 +71,26 @@ button a {
 	background: linear-gradient(88deg, #0a003e -91.36%, #eb028e 114.99%);
 	border-radius: 12px;
 	padding: 15px 50px;
+	text-align: center;
+	color: var(--White, #FEFEFE);
+	font-family: Roboto;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+.login-btn:hover, .sign-up-btn:hover {
+    transform: scale(1.05);
 }
 .sign-up-btn {
 	border: 3px solid #eb028e;
 	border-radius: 12px;
 	padding: 15px 50px;
 	background-color: transparent;
+	color: var(--White, #FEFEFE);
+	font-family: Roboto;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
 }
