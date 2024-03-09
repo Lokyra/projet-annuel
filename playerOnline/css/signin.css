@@ -55,7 +55,6 @@
 	background: linear-gradient(88deg, #0a003e -91.36%, #eb028e 114.99%);
 	border-radius: 12px;
   margin-top: 20px;
-	padding: 15px 50px;
   width: 100%;
   display: flex;
   padding: 20px 100px;
@@ -91,7 +90,9 @@
   line-height: normal;
   text-decoration: none;
 }
-
+.login-btn-signin:hover, .sign-in-btn:hover {
+  transform: scale(1.05);
+}
 .user-input label, .password-label {
   white-space: nowrap;
 }
