@@ -27,19 +27,51 @@ if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
     exit; // interrompt le code
 }
 
-// Si les identifiants ne correspondent aux attentes > redirection avec un message
-if ($_POST['email'] != 'admin@site.com' || $_POST['mot_de_passe'] != 'php123') {
-    header('location: connexion.php?message=Identifiants incorrects !');
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "PhpWeb";
+
+try {
+    $bdd = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+
+$req = $bdd->prepare("SELECT email, password FROM users WHERE email = :email");
+$req->execute([':email' => $_POST['email']]);
+
+
+if ($req->rowCount() == 0) {
+   
+    $hashed_password = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT);
+
+    
+    $req = $bdd->prepare("INSERT INTO users (email, password) VALUES (:email, :password)");
+    $req->execute([':email' => $_POST['email'], ':password' => $hashed_password]);
+
+    
+    header('location: connexion.php?message=Compte créé ! Connectez-vous à nouveau.');
     exit; // interrompt le code
 }
 
-// Si on arrive ici, c'est que tout est OK !
-// connectons l'utilisateur
+if ($req->rowCount() > 0) {
+ 
+    $user = $req->fetch(PDO::FETCH_ASSOC);
 
-// Créer une session utilisateur
-session_start();
-// Y mettre un index 'email' avec la valeur de l'email reçu
-$_SESSION['email'] = $_POST['email'];
-// Redirection vers la page d'accueil
-header('location: app.php');
-exit;
+    
+    if (password_verify($_POST['mot_de_passe'], $user['password'])) {
+        // Créer une session utilisateur
+        session_start();
+        // Y mettre un index 'email' avec la valeur de l'email reçu
+        $_SESSION['email'] = $_POST['email'];
+        // Redirection vers la page d'accueil
+        header('location: app.php');
+    } else {
+        header('location: connexion.php?message=Mot de passe incorrect !');
+        exit;
+    }
+} 
+
+
