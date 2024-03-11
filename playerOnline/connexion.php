@@ -36,8 +36,8 @@
             </label>
             <div  role="button" class="forgot-password" onclick="alert('Forgot Password?');">Forgot Password?</div>
         </div>
-        < type="submit" href="#" class="login-btn-signin" value="Login">Login</a>
-        <a  class="login-btn-signin">Sign-up</a>
+        <button class="login-btn-signin" value="Login">Login</button>
+        <button  class="login-btn-signin">Sign-up</button>
     </form>
   
           
