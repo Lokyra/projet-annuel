@@ -21,14 +21,16 @@
        
     </header>
     <main>
-        <h1 class="text">Connect to your<br> Tic-tac-toe<br> account</h1>
+        <h1 class="text">Create your<br> Tic-tac-toe<br> account</h1>
     
-    <form action="verify.php" method="post" class="container">
-        
-        <input type="email" name="email" class="user-input" placeholder="User Name or Email" value="<?= isset($_COOKIE['email']) ? htmlspecialchars($_COOKIE['email']) : ''; ?>">
+    <form action="verify_sign.php" method="post" class="container">
+
+        <input type="pseudo" name="pseudo" class="user-input" placeholder="pseudo">
+
+        <input type="email" name="email" class="user-input" placeholder="Email" value="<?= isset($_COOKIE['email']) ? htmlspecialchars($_COOKIE['email']) : ''; ?>">
        
         <input type="password" name="mot_de_passe" class="user-input" placeholder="Password">
-      
+
         <div class="remember-me">
             <label class="checkbox-label">
                 <input type="checkbox" class="checkbox" id="rememberMe" name="rememberMe">
@@ -36,10 +38,7 @@
             </label>
             <div  role="button" class="forgot-password" onclick="alert('Forgot Password?');">Forgot Password?</div>
         </div>
-        <div>
-            <button class="login-btn-signin" value="Login">Login</button>
-            <a class="sign-in-btn" value="sign-up" href="signup.php">Sign-up</a>
-        </div>
+        <button class="login-btn-signin">Sign-up</button>
     </form>
   
           
