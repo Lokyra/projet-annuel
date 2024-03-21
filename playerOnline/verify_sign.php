@@ -48,13 +48,22 @@ $req->execute([':email' => $_POST['email']]);
 if ($req->rowCount() == 0) {
    
     $hashed_password = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT);
+    $verificationToken = bin2hex(random_bytes(32));
+
+    session_start();
+    $_SESSION['pseudo'] = $_POST['pseudo'];
 
     
-    $req = $bdd->prepare("INSERT INTO users (email, password, pseudo) VALUES (:email, :password, :pseudo)");
-    $req->execute([':email' => $_POST['email'], ':password' => $hashed_password, ':pseudo' => $_POST['pseudo']]);
-  
-    header('location: login.php?message=Compte créé ! Verifiez votre mail pour vous connecters.');
-    exit; 
+    $req = $bdd->prepare("INSERT INTO users (email, password, pseudo, token) VALUES (:email, :password, :pseudo, :token)");
+    $req->execute([':email' => $_POST['email'], ':password' => $hashed_password, ':pseudo' => $_POST['pseudo'], ':token' => $verificationToken]);
+
+    if (sendVerificationEmail($_POST['email'], $verificationToken)) {
+        header('location: token.php?message=Compte créé ! Verifiez votre mail pour vous connecter.');
+        exit;
+    } else {
+        header('location: login.php?message=Compte créé ! Mais impossible d\'envoyer le mail de verification.');
+        exit;
+    }
 }
 
 if ($req->rowCount() > 0) {

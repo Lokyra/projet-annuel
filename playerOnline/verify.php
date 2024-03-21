@@ -27,6 +27,8 @@ if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
     exit; // interrompt le code
 }
 
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
