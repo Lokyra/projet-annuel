@@ -2,13 +2,12 @@
 
 require_once 'email.php';
 
-// Si un email a été envoyé et que cet email n'est pas vide alors créer un cookie contenant cet email et qui expire dans 30j.
+
 if (isset($_POST['email']) && !empty($_POST['email'])) {
     setcookie('email', $_POST['email'], time() + 30 * 24 * 3600);
 }
 
 
-// Si email ou password n'existent ou sont vides > redirection vers le formulaire avec un message d'erreur
 if (
     !isset($_POST['email'])
     || empty($_POST['email'])
@@ -18,21 +17,19 @@ if (
     || empty($_POST['pseudo'])
 ) {
     header('location: signup.php?message=Vous devez remplir les 3 champs !');
-    exit; // interrompt le code
+    exit;
 }
 
 
-
-// Si l'email n'est pas valide > redirection vers connexion.php avec un message d'erreur
 if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
     header('location: signup.php?message=Adresse email invalide !');
-    exit; // interrompt le code
+    exit;
 }
 
 $servername = "localhost";
 $username = "root";
-$password = "";
-$dbname = "PhpWeb";
+$password = "tictactoe";
+$dbname = "tictactoe";
 
 try {
     $bdd = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -49,9 +46,6 @@ if ($req->rowCount() == 0) {
    
     $hashed_password = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT);
     $verificationToken = bin2hex(random_bytes(32));
-
-    session_start();
-    $_SESSION['pseudo'] = $_POST['pseudo'];
 
     
     $req = $bdd->prepare("INSERT INTO users (email, password, pseudo, token) VALUES (:email, :password, :pseudo, :token)");

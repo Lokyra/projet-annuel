@@ -2,8 +2,8 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
-$dbname = "PhpWeb";
+$password = "tictactoe";
+$dbname = "tictactoe";
 
 try {
     $bdd = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -18,7 +18,7 @@ if (
     
 ) {
     header('location: token.php?message=Vous devez entrer votre token envoyer par mail !');
-    exit; // interrompt le code
+    exit; 
 }
 
 $req = $bdd->prepare('SELECT * FROM users WHERE token = :token');
