@@ -1,6 +1,5 @@
 <?php
 
-include 'writeLog.php';
 
 if (isset($_POST['email']) && !empty($_POST['email'])) {
     setcookie('email', $_POST['email'], time() + 30 * 24 * 3600);
@@ -53,7 +52,6 @@ if ($req->rowCount() > 0) {
             session_start();  
             $_SESSION['email'] = $_POST['email'];
             $_SESSION['pseudo'] = $user['pseudo'];
-            writeLogLine(true, $_POST['email']);
             header('location: app.php');
         } else {
             header('location: login.php?message=Compte non vérifer !');
