@@ -1,6 +1,6 @@
 
 <?php
-ini_set('display_errors', 1);
+
 require 'vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -10,7 +10,6 @@ function sendVerificationEmail($to, $token) {
     $mail = new PHPMailer(true);
 
     try {
-        //Server settings
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
@@ -19,11 +18,10 @@ function sendVerificationEmail($to, $token) {
         $mail->SMTPSecure = 'tls';
         $mail->Port       = 587;
 
-        //Recipients
+
         $mail->setFrom('arasaka.unity@gmail.com', 'Tic-tac-toe Player Online');
         $mail->addAddress($to);
 
-        // Content
         $mail->isHTML(false);
         $mail->Subject = 'Verify your email address';
         $mail->Body    = 'Thank you for registering! Please enter the token below to verify your email address:';
