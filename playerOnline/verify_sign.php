@@ -38,7 +38,7 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 
-$req = $bdd->prepare("SELECT email, password, pseudo FROM users WHERE email = :email");
+$req = $bdd->prepare("SELECT email, password, pseudo FROM user WHERE email = :email");
 $req->execute([':email' => $_POST['email']]);
 
 
@@ -48,7 +48,7 @@ if ($req->rowCount() == 0) {
     $verificationToken = bin2hex(random_bytes(32));
 
     
-    $req = $bdd->prepare("INSERT INTO users (email, password, pseudo, token) VALUES (:email, :password, :pseudo, :token)");
+    $req = $bdd->prepare("INSERT INTO user (email, password, pseudo, token) VALUES (:email, :password, :pseudo, :token)");
     $req->execute([':email' => $_POST['email'], ':password' => $hashed_password, ':pseudo' => $_POST['pseudo'], ':token' => $verificationToken]);
 
     if (sendVerificationEmail($_POST['email'], $verificationToken)) {

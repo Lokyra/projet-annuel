@@ -21,13 +21,13 @@ if (
     exit; 
 }
 
-$req = $bdd->prepare('SELECT * FROM users WHERE token = :token');
+$req = $bdd->prepare('SELECT * FROM user WHERE token = :token');
 $req->execute(['token' => $_POST['token']]);
 
 $user = $req->fetch();
 
 if ($user['token'] == $_POST['token']) {
-    $req = $bdd->prepare('UPDATE users SET email_verified = 1, token = NULL WHERE id = :id');
+    $req = $bdd->prepare('UPDATE user SET email_verified = 1, token = NULL WHERE id = :id');
     $req->execute(['id' => $user['id']]);
     header('Location: login.php?message=Compte verifié ! Vous pouvez desormais vous connecter !');
     exit;

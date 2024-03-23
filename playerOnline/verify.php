@@ -36,7 +36,7 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 
-$req = $bdd->prepare("SELECT email, password, pseudo FROM users WHERE email = :email");
+$req = $bdd->prepare("SELECT email, password, pseudo FROM user WHERE email = :email");
 $req->execute([':email' => $_POST['email']]);
 
 
