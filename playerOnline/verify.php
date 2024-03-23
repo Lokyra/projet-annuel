@@ -1,5 +1,7 @@
 <?php
 
+include 'writeLog.php';
+
 if (isset($_POST['email']) && !empty($_POST['email'])) {
     setcookie('email', $_POST['email'], time() + 30 * 24 * 3600);
 }
@@ -11,13 +13,13 @@ if (
     || !isset($_POST['mot_de_passe'])
     || empty($_POST['mot_de_passe'])
 ) {
-    header('location: connexion.php?message=Vous devez remplir les 2 champs !');
+    header('location: login.php?message=Vous devez remplir les 2 champs !');
     exit; 
 }
 
 
 if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-    header('location: connexion.php?message=Adresse email invalide !');
+    header('location: login.php?message=Adresse email invalide !');
     exit; 
 }
 
@@ -36,7 +38,7 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 
-$req = $bdd->prepare("SELECT email, password, pseudo FROM user WHERE email = :email");
+$req = $bdd->prepare("SELECT email, password, pseudo, email_verified FROM user WHERE email = :email");
 $req->execute([':email' => $_POST['email']]);
 
 
@@ -47,10 +49,17 @@ if ($req->rowCount() > 0) {
 
     
     if (password_verify($_POST['mot_de_passe'], $user['password'])) {   
-        session_start();  
-        $_SESSION['email'] = $_POST['email'];
-        $_SESSION['pseudo'] = $user['pseudo'];
-        header('location: app.php');
+        if($user['email_verified'] == 1) {
+            session_start();  
+            $_SESSION['email'] = $_POST['email'];
+            $_SESSION['pseudo'] = $user['pseudo'];
+            writeLogLine(true, $_POST['email']);
+            header('location: app.php');
+        } else {
+            header('location: login.php?message=Compte non vérifer !');
+            exit;
+        }
+        
     } else {
         header('location: login.php?message=Mot de passe incorrect !');
         exit;

@@ -1,3 +1,6 @@
+<?php 
+include 'captcha.php'
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +34,10 @@
        
         <input type="password" name="mot_de_passe" class="user-input" placeholder="Password">
 
+        <label for="captcha_question" class="user-input">Please answer the following question :</label>
+        <p><?php echo htmlspecialchars($selected_question); ?></p>
+        <input type="text" id="captcha_answer" name="captcha_answer" class="user-input" required>
+
         <div class="remember-me">
             <label class="checkbox-label">
                 <input type="checkbox" class="checkbox" id="rememberMe" name="rememberMe">
@@ -47,3 +54,4 @@
     
 </body>
 </html>
+

@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once 'email.php';
 
 
@@ -23,6 +25,18 @@ if (
 
 if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
     header('location: signup.php?message=Adresse email invalide !');
+    exit;
+}
+
+if (!isset($_SESSION['correct_answer']) || !isset($_POST['captcha_answer'])) {
+    die("Invalid request");
+}
+
+$user_answer = $_POST['captcha_answer'];
+$correct_answer = $_SESSION['correct_answer'];
+
+if (strtolower(trim($user_answer)) !== strtolower(trim($correct_answer))) {
+    header("Location: signup.php?message=Captcha Invalide !");
     exit;
 }
 
