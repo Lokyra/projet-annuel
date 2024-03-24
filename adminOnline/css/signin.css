@@ -1,0 +1,153 @@
+@font-face {
+	font-family: 'Rubik';
+	font-style: bold;
+	font-weight: 400;
+	src: url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
+}
+
+
+.text {
+    font-family: "Rubik Mono One", monospace;
+    font-size: 60px;
+    text-align: center;
+}
+
+::placeholder {
+  color: #fefefe;
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  font-style: bold;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  align-self: stretch;
+}
+
+.container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  max-width: 656px;
+  flex-direction: column;
+  font: Roboto, sans-serif;
+  font-size: 20px;
+  margin-left: 600px;
+}
+
+.user-input, .password-container {
+  border: 5px solid #eb028e;
+  box-shadow: 0 11px 30px 15px rgba(10, 0, 62, 0.3);
+  background-color: transparent;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px 30px;
+  width: 100%;
+  color:white;
+  gap: 20px;
+}
+.login-btn-signin {
+	display: flex;
+  padding: 20px 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 16px;
+  background: linear-gradient(88deg, #0A003E -91.36%, #EB028E 114.99%);
+  box-shadow: 0px 11px 30px 15px rgba(10, 0, 62, 0.30);
+  color: var(--White, #FEFEFE);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+.sign-in-btn {
+  display: flex;
+  padding: 20px 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 16px;
+  border: 5px solid #0A003E;
+  box-shadow: 0px 11px 30px 15px rgba(10, 0, 62, 0.30);
+  color: var(--White, #FEFEFE);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-decoration: none;
+}
+.login-btn-signin:hover, .sign-in-btn:hover {
+  transform: scale(1.05);
+}
+.user-input label, .password-label {
+  white-space: nowrap;
+}
+.password-label {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 20px 30px;
+  width: 100%;
+  color:white;
+  gap: 20px;
+}
+
+.remember-me {
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.checkbox-label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fefefe;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 20px;
+  height: 20px;
+  border: 5px solid #0a003e;
+  border-radius: 10px;
+  display: grid;
+  place-content: center;
+}
+
+.checkbox:checked::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #0a003e;
+  border-radius: 5px;
+}
+
+.forgot-password,
+.checkbox-label span {
+    color: #eb028e;
+    font-weight: 400;
+    text-decoration: underline;
+    cursor: pointer;
+}
