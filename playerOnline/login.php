@@ -21,7 +21,7 @@
        
     </header>
     <main>
-        <h1 class="text">Connect to your<br> Tic-tac-toe<br> account</h1>
+        <h1 class="text">Se connecter à votre compte<br> Tic-tac-toe</h1>
     
     <form action="verify.php" method="post" class="container">
         
