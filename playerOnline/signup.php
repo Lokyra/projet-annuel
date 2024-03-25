@@ -24,7 +24,7 @@ include 'captcha.php'
        
     </header>
     <main>
-        <h1 class="text">Create your<br> Tic-tac-toe<br> account</h1>
+        <h1 class="text">Créer votre compte<br> Tic-tac-toe</h1>
     
     <form action="verify_sign.php" method="post" class="container">
 
@@ -34,18 +34,18 @@ include 'captcha.php'
        
         <input type="password" name="mot_de_passe" class="user-input" placeholder="Password">
 
-        <label for="captcha_question" class="user-input">Please answer the following question :</label>
+        <label for="captcha_question" class="user-input">Veuillez répondre à la question suivante :</label>
         <p><?php echo htmlspecialchars($selected_question); ?></p>
         <input type="text" id="captcha_answer" name="captcha_answer" class="user-input" required>
 
         <div class="remember-me">
             <label class="checkbox-label">
                 <input type="checkbox" class="checkbox" id="rememberMe" name="rememberMe">
-                <span>Remember me</span>
+                <span>Se souvenir de moi</span>
             </label>
-            <div  role="button" class="forgot-password" onclick="alert('Forgot Password?');">Forgot Password?</div>
+            <div  role="button" class="forgot-password" onclick="alert('Forgot Password?');">Mot de passe ?</div>
         </div>
-        <button class="login-btn-signin">Sign-up</button>
+        <button class="login-btn-signin">Inscription</button>
     </form>
   
           
