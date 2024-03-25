@@ -23,15 +23,15 @@ function sendVerificationEmail($to, $token) {
         $mail->addAddress($to);
 
         $mail->isHTML(false);
-        $mail->Subject = 'Verify your email address';
-        $mail->Body    .= 'Thank you for registering! Please enter the token below to verify your email address:' . PHP_EOL;
-        $mail->Body   .= 'Here is your token : ' . $token . PHP_EOL . PHP_EOL;
-        $mail->Body   .= 'If you did not register, please ignore this email.';
+        $mail->Subject = 'Verifier votre adresse mail';
+        $mail->Body    .= 'Merci pour votre inscription! Veuillez renseigner le token ci-dessous pour vérifier votre adresse mail:' . PHP_EOL;
+        $mail->Body   .= 'Voici votre token : ' . $token . PHP_EOL . PHP_EOL;
+        $mail->Body   .= 'Si vous ne vous êtes pas inscrit, veuillez ignorer ce message.';
 
         $mail->send();
         return true;
     } catch (Exception $e) {
-        echo 'Failed to send email ' . $mail->ErrorInfo;
+        echo "Impossible d'envoyer l'email" . $mail->ErrorInfo;
         return false;
     }
 }
