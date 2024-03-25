@@ -21,14 +21,14 @@
        
     </header>
     <main>
-        <h1 class="text">Enter your<br>verification<br>token</h1>
+        <h1 class="text">Veuillez entrer votre <br>token<br> de vérification</h1>
     
     <form action="verify_token.php" method="post" class="container">
         
         <input type="text" name="token" class="user-input" placeholder="Enter your token">
       
         <div>
-        <button type="submit" class="login-btn-signin" value="Verify">Verify</button>
+        <button type="submit" class="login-btn-signin" value="Verify">Vérifier</button>
         </div>
         
     </form>
