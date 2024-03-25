@@ -21,10 +21,10 @@
             <span class="logo-text">Tic-tac-toe.com</span>
         </div>
         <nav class="navigation">
-            <div class="navigation-item">Play</div>
+            <div class="navigation-item">Jouer</div>
             <div class="navigation-item">Puzzles</div>
-            <div class="navigation-item">Learn</div>
-            <div class="navigation-item">Watch</div>
+            <div class="navigation-item">Apprendre</div>
+            <div class="navigation-item">Regarder</div>
         </nav>
         <div class="action-buttons">
             <a href="login.php"class="login-btn">Login</a>
@@ -41,20 +41,20 @@
         <div class="table-wrapper">
             <table class="game-table">
                 <tr>
-                    <th>Name of Account</th>
-                    <th>Stats</th>
-                    <th>Email Address</th>
-                    <th>Password</th>
-                    <th>Creation of the account</th>
-                    <th>Guild</th>
+                    <th>Nom du compte</th>
+                    <th>Statistique</th>
+                    <th>Adresse mail</th>
+                    <th>Mot de passe</th>
+                    <th>Date de création du compte</th>
+                    <th>Guilde</th>
                 </tr>
                 <tr>
-                    <td class="table-cell">Player 1</td>
+                    <td class="table-cell">Joueur 1</td>
                     <td class="table-cell">50% Win, 50% lose</td>
                     <td class="table-cell">player1@example.com</td>
                     <td class="table-cell">********</td>
                     <td class="table-cell">2024-02-25 08:00 AM</td>
-                    <td class="table-cell">Guild A</td>
+                    <td class="table-cell">Guilde A</td>
                 </tr>
             </table>
         </div>
