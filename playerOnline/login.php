@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+r<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,13 +32,13 @@
         <div class="remember-me">
             <label class="checkbox-label">
                 <input type="checkbox" class="checkbox" id="rememberMe" name="rememberMe">
-                <span>Remember me</span>
+                <span>Se rappeller de moi</span>
             </label>
-            <div  role="button" class="forgot-password" onclick="alert('Forgot Password?');">Forgot Password?</div>
+            <div  role="button" class="forgot-password" onclick="alert('Forgot Password?');">Mot de passe oublié?</div>
         </div>
         <div>
-            <button class="login-btn-signin" value="Login">Login</button>
-            <a class="sign-in-btn" value="sign-up" href="signup.php">Sign-up</a>
+            <button class="login-btn-signin" value="Login">Connection</button>
+            <a class="sign-in-btn" value="sign-up" href="signup.php">Inscription</a>
         </div>
     </form>
   
