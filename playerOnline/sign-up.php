@@ -21,7 +21,7 @@
        
     </header>
     <main>
-        <h1 class="text">Create your<br> Tic-tac-toe<br> account</h1>
+        <h1 class="text">Créer votre compte<br> Tic-tac-toe</h1>
     
     <form action="verification.php" method="post" class="container">
 
@@ -34,11 +34,11 @@
         <div class="remember-me">
             <label class="checkbox-label">
                 <input type="checkbox" class="checkbox" id="rememberMe" name="rememberMe">
-                <span>Remember me</span>
+                <span>Se souvenir de moi</span>
             </label>
-            <div  role="button" class="forgot-password" onclick="alert('Forgot Password?');">Forgot Password?</div>
+            <div  role="button" class="forgot-password" onclick="alert('Forgot Password?');">Mot de passe oublié ?</div>
         </div>
-        <button class="login-btn-signin">Sign-up</button>
+        <button class="login-btn-signin">Inscription</button>
     </form>
   
           
