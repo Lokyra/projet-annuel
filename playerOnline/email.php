@@ -26,7 +26,7 @@ function sendVerificationEmail($to, $token) {
         $mail->Subject = 'Verifier votre adresse mail';
         $mail->Body    .= 'Merci pour votre inscription! Veuillez renseigner le token ci-dessous pour vérifier votre adresse mail:' . PHP_EOL;
         $mail->Body   .= 'Voici votre token : ' . $token . PHP_EOL . PHP_EOL;
-        $mail->Body   .= 'Ci vous ne vous êtes pas inscrit, veuillez ignorer ce message.';
+        $mail->Body   .= 'Si vous ne vous êtes pas inscrit, veuillez ignorer ce message.';
 
         $mail->send();
         return true;
