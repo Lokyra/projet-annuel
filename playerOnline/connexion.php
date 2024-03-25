@@ -21,7 +21,7 @@
        
     </header>
     <main>
-        <h1 class="text">Connect to your<br> Tic-tac-toe<br> account</h1>
+        <h1 class="text">Se connecter à votre compte<br> Tic-tac-toe</h1>
     
     <form action="verification.php" method="post" class="container">
         
@@ -32,13 +32,13 @@
         <div class="remember-me">
             <label class="checkbox-label">
                 <input type="checkbox" class="checkbox" id="rememberMe" name="rememberMe">
-                <span>Remember me</span>
+                <span>Se souvenir de moi</span>
             </label>
             <div  role="button" class="forgot-password" onclick="alert('Forgot Password?');">Forgot Password?</div>
         </div>
         <div>
-            <button class="login-btn-signin" value="Login">Login</button>
-            <a class="sign-in-btn" value="sign-up" href="sign-up.php">Sign-up</a>
+            <button class="login-btn-signin" value="Login">Connexion</button>
+            <a class="sign-in-btn" value="sign-up" href="sign-up.php">Inscription</a>
         </div>
     </form>
   
