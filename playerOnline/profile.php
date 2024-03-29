@@ -1,7 +1,9 @@
+<?php
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="asset/favicon.png"/>
@@ -42,20 +44,15 @@
             <table class="game-table">
                 <tr>
                     <th>Nom du compte</th>
-                    <th>Statistique</th>
                     <th>Adresse mail</th>
                     <th>Mot de passe</th>
-                    <th>Date de création du compte</th>
-                    <th>Guilde</th>
                 </tr>
-                <tr>
-                    <td class="table-cell">Joueur 1</td>
-                    <td class="table-cell">50% Win, 50% lose</td>
-                    <td class="table-cell">player1@example.com</td>
-                    <td class="table-cell">********</td>
-                    <td class="table-cell">2024-02-25 08:00 AM</td>
-                    <td class="table-cell">Guilde A</td>
-                </tr>
+               <?php
+                 echo "<tr>";
+                 echo "<td class='table-cell'>" . $_SESSION['pseudo'] . "</td>";
+                 echo "<td class='table-cell'>" . $_SESSION['email'] . "</td>";
+                 echo "</tr>";
+               ?>
             </table>
         </div>
     </main>
