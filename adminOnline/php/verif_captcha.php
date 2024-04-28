@@ -24,4 +24,4 @@ $req->execute([
     'answer' => $_POST['answer'],
 ]);
 
-header('location: captcha.php?message=Captcha créé avec succès !!&type=success');
+header('location: users.php?message=Captcha créé avec succès !!&type=success');

@@ -25,93 +25,16 @@ $req->execute();
 </head>
 
 <body>
-    <div class="wrapper">
-        <aside id="sidebar">
-            <div class="d-flex">
-                <button class="toggle-btn" type="button">
-                    <i class="lni lni-grid-alt"></i>
-                </button>
-                <div class="sidebar-logo">
-                    <a href="admin.php">Tic-Tac-Toe</a>
-                </div>
-            </div>
-            <ul class="sidebar-nav">
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="lni lni-user"></i>
-                        <span>Users</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="captcha.php" class="sidebar-link">
-                        <i class="lni lni-agenda"></i>
-                        <span>Captcha</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                        data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
-                        <i class="lni lni-protection"></i>
-                        <span>Auth</span>
-                    </a>
-                    <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Login</a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Register</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                        data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
-                        <i class="lni lni-layout"></i>
-                        <span>Multi Level</span>
-                    </a>
-                    <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse"
-                                data-bs-target="#multi-two" aria-expanded="false" aria-controls="multi-two">
-                                Two Links
-                            </a>
-                            <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
-                                <li class="sidebar-item">
-                                    <a href="#" class="sidebar-link">Link 1</a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="#" class="sidebar-link">Link 2</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-item">
-                    <a href="newsletter.php" class="sidebar-link">
-                        <i class="lni lni-popup"></i>
-                        <span>Newsletter</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="lni lni-cog"></i>
-                        <span>Setting</span>
-                    </a>
-                </li>
-            </ul>
-            <div class="sidebar-footer">
-                <a href="#" class="sidebar-link">
-                    <i class="lni lni-exit"></i>
-                    <span>Logout</span>
-                </a>
-            </div>
-        </aside>
+        <?php include('../includes/sidebar.php'); ?>
+
         <div class="main">
             <nav class="navbar navbar-expand px-4 py-3">
                 <form class="form-inline">
                     <input class="form-control mr-sm-2" type="text" placeholder="search" id="search_input" aria-label="Search" oninput="searchUsers()">
                    
                 </form>
+                <a href="add_user.php" class="btn btn-primary btn-sm ms-2">Ajouter</a>
+                <a href="pdf_generator.php" class="btn btn-primary btn-sm ms-2" target="_blank">Extraire les données utilisateurs</a>
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item dropdown">
@@ -130,18 +53,18 @@ $req->execute();
             <main class="content px-3 py-4">
                 <div class="container-fluid">
                     <div class="mb-3">
-                        <h3 class="fw-bold fs-4 my-3">Users
+                        <h3 class="fw-bold fs-4 my-3">Utilisateurs
                         </h3>
                         <div class="row">
                             <div class="col-12">
                                 <table class="table table-striped">
                                     <thead>
                                         <tr class="highlight">
+                                            <th scope="col">id</th>
                                             <th scope="col">pseudo</th>
                                             <th scope="col">Stats</th>
                                             <th scope="col">Email address</th>
-                                            <th scope="col">Last Connection</th>
-                                            
+                                            <th scope="col">Last Connection</th>   
                                         </tr>
                                     </thead>
                                     <tbody id="user_result">

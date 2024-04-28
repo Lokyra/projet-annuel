@@ -27,14 +27,6 @@ async function getCaptchas() {
     div.innerHTML = txt;
 }
 
-async function getNewsletters() {
-   
-    const res = await fetch("http://localhost:50/adminOnline/php/get_newsletters.php");
-    const txt = await res.text();
-    const div = document.getElementById("news");
-    div.innerHTML = txt;
-}
-
 async function searchCaptchas() {
     const searchInput = document.getElementById('search_input');
     const s = searchInput.value;
@@ -43,3 +35,22 @@ async function searchCaptchas() {
     const div = document.getElementById("captcha_result");
     div.innerHTML = txt;
 }
+
+
+async function getNewsletters() {
+   
+    const res = await fetch("http://localhost:50/adminOnline/php/get_newsletters.php");
+    const txt = await res.text();
+    const div = document.getElementById("news");
+    div.innerHTML = txt;
+}
+
+async function searchNewsletters() {
+    const searchInput = document.getElementById('search_input');
+    const s = searchInput.value;
+    const res = await fetch("http://localhost:50/adminOnline/php/search_newsletters.php?search=" + s);
+    const txt = await res.text();
+    const div = document.getElementById("news");
+    div.innerHTML = txt;
+}
+

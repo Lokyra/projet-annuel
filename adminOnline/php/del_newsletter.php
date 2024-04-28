@@ -10,7 +10,7 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
     exit;
 }
 
-$q = 'DELETE FROM captcha WHERE id = :id';
+$q = 'DELETE FROM newsletter WHERE id = :id';
 $req = $bdd->prepare($q);
 
 $res = $req->execute([
@@ -18,8 +18,8 @@ $res = $req->execute([
 ]);
 
 if(!$res) {
-    header('location: newsletter.php?message=id non valide!&type=danger');
+    header('location: newsletter.php?message=erreur lors de la suppression!&type=danger');
     exit;
 } else {
-    header('location: newsletter.php?message=Captcha supprime avec succès !!&type=success');
+    header('location: newsletter.php?message=Newsletter supprimé avec succès !!&type=success');
 }

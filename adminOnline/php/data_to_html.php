@@ -4,6 +4,7 @@ function users_to_html($users) {
     foreach($users as $user) {
         echo "
         <tr>
+        <td class='table-cell'>" . $user["id"] . "</td>
         <td class='table-cell'>" . $user["pseudo"] . "</td>
         <td class='table-cell'>Win: 10, Loss: 5</td>
         <td class='table-cell'>" . $user["email"] . "</td>

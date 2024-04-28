@@ -1,3 +1,13 @@
+<?php
+
+include 'db_connection.php';
+
+$req = $bdd->prepare("SELECT id, question, answer FROM captcha");
+$req->execute();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
 
 
 <!DOCTYPE html>
@@ -15,14 +25,14 @@
 </head>
 
 <body>
-        <?php include('../includes/sidebar.php'); ?>
+ <?php include('../includes/sidebar.php'); ?>
         <div class="main">
             <nav class="navbar navbar-expand px-4 py-3">
                 <form class="form-inline">
                     <input class="form-control mr-sm-2" type="text" placeholder="search" id="search_input" aria-label="Search" oninput="searchCaptchas()">
                    
                 </form>
-                <a href="add_captcha.php" class="btn btn-primary btn-sm ms-2">Ajouter</a>
+                <a href="new_newsletter.php" class="btn btn-primary btn-sm ms-2">Add</a>
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item dropdown">
@@ -37,30 +47,25 @@
                 </div>
                 
             </nav>
-            
-            <?php require_once "../includes/message.php" ?>
-
             <main class="content px-3 py-4">
                 <div class="container-fluid">
-                    <div class="mb-3">
-                        <h3 class="fw-bold fs-4 my-3">Captchas
-                        </h3>
-                        <div class="row">
-                            <div class="col-12">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr class="highlight">
-                                            <th scope="col">id</th>
-                                            <th scope="col">Question</th>
-                                            <th scope="col">Answer</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="captcha_result">
-                                    </tbody>
-                                </table>
-                            </div>
+                    <form method="post" action="verif_up_newsletter.php?id=<?php echo $_GET['id']; ?>">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Sujet de la newsletter</label>
+                            <input type="text" name="topic" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">Sujet Generale.</div>
                         </div>
-                    </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Objet du mail</label>
+                            <input type="text" name="subject" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                            <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="10"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Modifier</button>
+                    </form>
                 </div>
             </main>
             <footer class="footer">

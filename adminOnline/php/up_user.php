@@ -132,7 +132,15 @@ error_reporting(E_ALL);
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Changer le pseudo</label>
                             <input type="text" name="pseudo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">Votre pseudo doit etre différent que celui existant.</div>
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Changer l'email</label>
+                            <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Changer le mot de passe</label>
+                            <input type="text" name="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
                     
                     

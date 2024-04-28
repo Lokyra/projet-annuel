@@ -11,33 +11,33 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     exit;
 }
 
-$pseudo = 0;
-$email = 0;
 $password = 0;
+$email = 0;
+$pseudo = 0;
 
-if (!empty($_POST['pseudo'])) {
+if (!empty($_POST['topic'])) {
     $pseudo = 1;
 }
-if (!empty($_POST['email'])) {
+if (!empty($_POST['subject'])) {
     $email = 1;
 }
-if (!empty($_POST['password'])) {
+if (!empty($_POST['message'])) {
     $password = 1;
 }
 
 
 if ($pseudo == 0 && $email == 0 && $password == 0) {
-    header('location: users.php?message=Vous devez remplir les 1 des 3 champs !&type=danger');
+    header('location: newsletter.php?message=Vous devez remplir les 1 des 3 champs !&type=danger');
     exit;
 }
 
 
 if ($pseudo == 1) {
-    $q = 'UPDATE user SET pseudo = :pseudo WHERE id = :id';
+    $q = 'UPDATE newsletter SET topic = :topic WHERE id = :id';
     $req = $bdd->prepare($q);
 
     $res = $req->execute([
-        'pseudo' => $_POST['pseudo'],
+        'topic' => $_POST['topic'],
         'id' => $_GET['id']
     ]);
     
@@ -45,22 +45,22 @@ if ($pseudo == 1) {
 
 
 if ($email == 1) {
-    $q = 'UPDATE user SET email = :email WHERE id = :id';
+    $q = 'UPDATE newsletter SET subject = :subject WHERE id = :id';
     $req = $bdd->prepare($q);
 
     $res = $req->execute([
-        'email' => $_POST['email'],
+        'subject' => $_POST['subject'],
         'id' => $_GET['id']
     ]);
     
 }
 
 if ($password == 1) {
-    $q = 'UPDATE user SET password = :password WHERE id = :id';
+    $q = 'UPDATE newsletter SET body = :body WHERE id = :id';
     $req = $bdd->prepare($q);
 
     $res = $req->execute([
-        'password' => $_POST['password'],
+        'body' => $_POST['message'],
         'id' => $_GET['id']
     ]);
 }
@@ -68,10 +68,9 @@ if ($password == 1) {
 
 
 if (!$res) {
-    header('location: users.php?message=Erreur !&type=danger');
+    header('location: newsletter.php?message=Erreur !&type=danger');
 }else {
-    header('location: users.php?message=Utilisateur modifié avec succès !&type=success');
+    header('location: newsletter.php?message=Newsletter modifié avec succès !&type=success');
 }
-
 
 

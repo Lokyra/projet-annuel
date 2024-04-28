@@ -27,7 +27,7 @@ $logFile = 'newsletter.log.txt';
 
 while ($user= $req->fetch(PDO::FETCH_ASSOC)) {
     $result = sendNewsEmail($user['email'], $new['subject'], $new['body']);
-    $message = date('Y-m-d H:i:s') . ' - ' . ($result ? 'Email sent successfully to ' : 'Failed to send email to ') . $row['email'] . PHP_EOL;
-    file_put_contents($logFile, $message, FILE_APPEND);
+    $password = date('Y-m-d H:i:s') . ' - ' . ($result ? 'Email sent successfully to ' : 'Failed to send email to ') . $row['email'] . PHP_EOL;
+    file_put_contents($logFile, $password, FILE_APPEND);
     header('location: newsletter.php?message=Newsletter envoyée avec succès !!&type=success');
 }
