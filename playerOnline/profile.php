@@ -1,5 +1,9 @@
 <?php
-session_start(); 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,10 +39,26 @@ session_start();
     </header>
     <main>
         <div class="stats-container">
-            <div class="stats-box">Dernière connnection : 1 day</div>
-            <div class="stats-box">Nombre de parties jouer: 128 000</div>
-            <div class="stats-box">Nombre de partie gagné: 1024 000</div>
-            <div class="stats-box">Nombre de partie perdu: 1024 000</div>
+            <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = "root";
+                $dbname = "tictactoe";
+                
+                try {
+                    $bdd = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                } catch(PDOException $e) {
+                    echo "Connection failed: " . $e->getMessage();
+                }
+                $req = $bdd->prepare("SELECT signup_date, nb_parties FROM user where email = :email");
+                $req-> execute([
+                    'email' => $_SESSION['email']
+                ]);
+                $user = $req->fetch();
+               echo "<div class='stats-box'>Date d'inscription : " . $user['signup_date'] . "</div>";
+               echo "<div class='stats-box'>Nombre de parties jouer: " . $user['nb_parties'] . "</div>";
+            ?>
         </div>
         <div class="table-wrapper">
             <table class="game-table">
