@@ -1,6 +1,8 @@
 <?php
 
-require_once 'db_connection.php';
+include '../includes/debug.php';
+
+require_once '../includes/db_connection.php';
 require_once 'data_to_html.php';
 
 $req = $bdd->prepare('SELECT id, question, answer FROM captcha');

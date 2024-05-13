@@ -46,9 +46,44 @@ function newsletter_to_html($newsletters) {
             <td>
                 <a href='send_newsletter.php?id=" . $newsletter["id"] . "' class='btn btn-primary btn-sm'>Envoyer</a>
                 <a href='up_newsletter.php?id=" . $newsletter["id"] . "' class='btn btn-primary btn-sm'>Modifier</a>
-                <a href='del_newsletter.php?id=" . $newsletter["id"] . "' class='btn btn-danger btn-sm mt-1'>Supprimer</a>
+                <a href='del_newsletter.php?id=" . $newsletter['id'] . "' class='btn btn-danger btn-sm'>Supprimer</a>
             </td>
         </tr>";
         
     }
 }
+ /*
+        if ($ticket['type'] == "Info") {
+            $color = "warning";
+        } elseif ($ticket['type'] == "Incident") {
+            $color = "info";
+        } 
+        */
+function ticket_to_html($tickets) {
+    
+    foreach ($tickets as $ticket) {
+
+        if ($ticket['type'] == "info") {
+            $description = "Information";
+        } elseif ($ticket['type'] == "warning") {
+            $description = "Incident";
+        } else {
+            $description = "Problème";
+        }
+
+        echo "
+        <div class='card text-white bg-" . $ticket["type"] . " mb-3 ms-3' style='max-width: 18rem;'>
+            <div class='card-header'>" . $description . "</div>
+            <div class='card-body'>
+                <h5 class='card-title'>" . $ticket["title"] . "</h5>
+                <p class='card-text'>" . $ticket["body"] . "</p>
+            </div>
+            <div class='d-flex'>
+                <a href='del_ticket.php?id=" . $ticket["id"] . "' class='btn btn-danger btn-sm me-auto w-50'>Supprimer</a>
+                <a href='up_ticket.php?id=" . $ticket["id"] . "' class='btn btn-primary btn-sm w-50'>Modifier</a>
+            </div>
+        </div>
+        ";
+    }
+}
+        

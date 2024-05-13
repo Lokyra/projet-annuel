@@ -1,6 +1,6 @@
 <?php
 
-include 'db_connection.php';
+include '../includes/db_connection.php';
 
 $req = $bdd->prepare("SELECT id, question, answer FROM captcha");
 $req->execute();

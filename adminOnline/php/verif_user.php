@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once "db_connection.php";
+require_once "../includes/db_connection.php";
 
 if (
     !isset($_POST['pseudo'])
@@ -18,8 +18,8 @@ if (
     exit;
 }
 
-$password = $_POST['password'];
-$password = password_hash($password, PASSWORD_DEFAULT);
+$body = $_POST['password'];
+$body = password_hash($body, PASSWORD_DEFAULT);
 
 $q = 'INSERT INTO user (pseudo, email, password, signup_date) VALUES (:pseudo, :email, :password, :signup_date)';
 $req = $bdd->prepare($q);
@@ -29,7 +29,7 @@ $currentDate = date('Y-m-d H:i:s');
 $res = $req->execute([
     'pseudo' => $_POST['pseudo'],
     'email' => $_POST['email'],
-    'password' => $password,
+    'password' => $body,
     'signup_date' => $currentDate
 ]);
 

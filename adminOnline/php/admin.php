@@ -2,7 +2,7 @@
 
 include "../includes/debug.php";
 
-require_once "db_connection.php";
+require_once "../includes/db_connection.php";
 
 $reqUserCount = $bdd->prepare("SELECT COUNT(email) as total_users FROM user");
 $reqUserCount->execute();

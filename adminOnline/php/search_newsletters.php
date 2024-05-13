@@ -1,13 +1,16 @@
 <?php
 
 require_once 'data_to_html.php';
+require_once '../includes/db_connection.php';
+
+include '../includes/debug.php';
 
 
 ini_set('display_errors', 1);
 
 $s = $_GET['search'];
 
-require_once 'db_connection.php';
+
 
 $req = $bdd->prepare('SELECT id, topic, subject, body FROM newsletter WHERE topic LIKE ?');
 

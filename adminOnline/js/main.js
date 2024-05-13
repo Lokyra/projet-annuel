@@ -2,6 +2,7 @@ window.addEventListener('load', function() {
     getNewsletters()
     getCaptchas();
     getUsers();
+    getTickets();
 })
 
 async function searchUsers() {
@@ -38,7 +39,6 @@ async function searchCaptchas() {
 
 
 async function getNewsletters() {
-   
     const res = await fetch("http://localhost:50/adminOnline/php/get_newsletters.php");
     const txt = await res.text();
     const div = document.getElementById("news");
@@ -54,3 +54,20 @@ async function searchNewsletters() {
     div.innerHTML = txt;
 }
 
+
+async function getTickets() {
+    const res = await fetch("http://localhost:50/adminOnline/php/get_tickets.php");
+    const txt = await res.text();
+    const div = document.getElementById("tickets");
+    div.innerHTML = txt;
+}
+
+
+async function searchTickets() {
+    const searchInput = document.getElementById('search_input');
+    const s = searchInput.value;
+    const res = await fetch("http://localhost:50/adminOnline/php/search_tickets.php?search=" + s);
+    const txt = await res.text();
+    const div = document.getElementById("tickets");
+    div.innerHTML = txt;
+}

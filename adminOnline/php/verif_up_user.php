@@ -11,28 +11,28 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     exit;
 }
 
-$pseudo = 0;
-$email = 0;
-$password = 0;
+$type = 0;
+$title = 0;
+$body = 0;
 
 if (!empty($_POST['pseudo'])) {
-    $pseudo = 1;
+    $type = 1;
 }
 if (!empty($_POST['email'])) {
-    $email = 1;
+    $title = 1;
 }
 if (!empty($_POST['password'])) {
-    $password = 1;
+    $body = 1;
 }
 
 
-if ($pseudo == 0 && $email == 0 && $password == 0) {
+if ($type == 0 && $title == 0 && $body == 0) {
     header('location: users.php?message=Vous devez remplir les 1 des 3 champs !&type=danger');
     exit;
 }
 
 
-if ($pseudo == 1) {
+if ($type == 1) {
     $q = 'UPDATE user SET pseudo = :pseudo WHERE id = :id';
     $req = $bdd->prepare($q);
 
@@ -44,7 +44,7 @@ if ($pseudo == 1) {
 }
 
 
-if ($email == 1) {
+if ($title == 1) {
     $q = 'UPDATE user SET email = :email WHERE id = :id';
     $req = $bdd->prepare($q);
 
@@ -55,7 +55,7 @@ if ($email == 1) {
     
 }
 
-if ($password == 1) {
+if ($body == 1) {
     $q = 'UPDATE user SET password = :password WHERE id = :id';
     $req = $bdd->prepare($q);
 

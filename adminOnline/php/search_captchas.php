@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 
 $s = $_GET['search'];
 
-require_once 'db_connection.php';
+require_once '../includes/db_connection.php';
 
 $req = $bdd->prepare('SELECT id, question, answer FROM captcha WHERE question LIKE ?');
 

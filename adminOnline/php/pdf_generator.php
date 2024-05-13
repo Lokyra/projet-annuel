@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 require('../fpdf/fpdf.php');
 
-require_once 'db_connection.php';
+require_once '../includes/db_connection.php';
 
 
 $req = $bdd->prepare("SELECT id, pseudo, email FROM user");
@@ -35,7 +35,7 @@ function Header()
 }
 
 
-// Page footer
+
 function Footer()
 {
     $this->SetY(-15);
@@ -45,12 +45,12 @@ function Footer()
 function BasicTable($header, $data)
     {
         foreach($header as $col)
-            $this->Cell(60,8,$col,1);
+            $this->Cell(65,8,$col,1);
         $this->Ln();
         foreach($data as $row)
         {
             foreach($row as $col)
-                $this->Cell(60,8,$col,1);
+                $this->Cell(65,8,$col,1);
             $this->Ln();
         }
     }
@@ -66,8 +66,6 @@ function BasicTable($header, $data)
 }
 
 
-
-// Instanciation of inherited class
 $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
