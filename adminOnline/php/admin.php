@@ -4,14 +4,14 @@ include "../includes/debug.php";
 
 require_once "../includes/db_connection.php";
 
-$reqUserCount = $bdd->prepare("SELECT COUNT(email) as total_users FROM user");
-$reqUserCount->execute();
-$userCount = $reqUserCount->fetch(PDO::FETCH_ASSOC);
+$req = $bdd->prepare("SELECT COUNT(email) as total_users FROM user");
+$req->execute();
+$userCount = $req->fetch(PDO::FETCH_ASSOC);
 
-$monthUserCount = $bdd->prepare("SELECT COUNT(email) as progress FROM user
+$progress = $bdd->prepare("SELECT COUNT(email) as progress FROM user
 WHERE MONTH(signup_date) = MONTH(CURRENT_DATE()) AND YEAR(signup_date) = YEAR(CURRENT_DATE())");
-$monthUserCount->execute();
-$monthCount = $monthUserCount->fetch(PDO::FETCH_ASSOC);
+$progress->execute();
+$monthCount = $progress->fetch(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -20,18 +20,12 @@ $monthCount = $monthUserCount->fetch(PDO::FETCH_ASSOC);
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-tac-toe Admin</title>
-    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
+    <?php include('../includes/head.php'); ?>
 </head>
 
 <body>
         <?php include('../includes/sidebar.php'); ?>
+        <div id="spark"></div>
         <div class="main">
             <nav class="navbar navbar-expand px-4 py-3">
                 <form action="#">
@@ -160,10 +154,9 @@ $monthCount = $monthUserCount->fetch(PDO::FETCH_ASSOC);
             </footer>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script src="../js/script.js"></script>
+    <?php include('../includes/script.php'); ?>
+   
+    
 </body>
 
 </html>

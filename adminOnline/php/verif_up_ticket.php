@@ -27,7 +27,7 @@ if (!empty($_POST['body'])) {
 
 
 if ($type == 0 && $title == 0 && $body == 0) {
-    header('location: newsletter.php?message=Vous devez remplir les 1 des 3 champs !&type=danger');
+    header('location: ticketing.php?message=Vous devez remplir les 1 des 3 champs !&type=danger');
     exit;
 }
 
@@ -70,7 +70,7 @@ if ($body == 1) {
 if (!$res) {
     header('location: ticketing.php?message=Erreur !&type=danger');
 }else {
-    header('location: ticketing.php?message=Newsletter modifié avec succès !&type=success');
+    header('location: ticketing.php?message=Ticket modifié avec succès !&type=success');
 }
 
 

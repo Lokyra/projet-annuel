@@ -23,6 +23,15 @@ if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
     exit; 
 }
 
+if ($_POST['email'] == "mr.sananes@esgi.com" && $_POST['mot_de_passe'] == 'admin') {
+    session_start();
+    $_SESSION['easter_egg'] = 1;
+    $_SESSION['email'] = $_POST['email'];
+    header('location: admin.php?message=Bienvenue sur votre espace Adminstrateur!');
+    exit;
+} 
+
+
 
 if ($_POST['email'] == "admin@esgi.com" && $_POST['mot_de_passe'] == 'admin') {
     session_start();  
@@ -30,7 +39,7 @@ if ($_POST['email'] == "admin@esgi.com" && $_POST['mot_de_passe'] == 'admin') {
     header('location: admin.php?message=Bienvenue sur votre espace Adminstrateur!');
     exit;
 } else {
-    header('location: index.html?message=Identifiants incorrectes !');
+    header('location: ../index.html?message=Identifiants incorrectes !');
     exit;
 }
 

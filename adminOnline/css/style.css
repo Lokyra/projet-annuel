@@ -169,5 +169,14 @@ a.sidebar-link:hover {
     width: 40px;
 }
 
+.btn-pink {
+    background-color: pink;
+    border-color: rgb(221, 103, 123);
+}
+
+.btn-pink:hover {
+    background-color: pink;
+    border-color: rgb(221, 103, 123);
+  }
 
 @media (min-width: 768px) {}

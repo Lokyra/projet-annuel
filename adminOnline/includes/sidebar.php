@@ -37,9 +37,7 @@
                         <li class="sidebar-item">
                             <a href="ticketing.php" class="sidebar-link">Ticketing</a>
                         </li>
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Log du site</a>
-                        </li>
+
                     </ul>
                 </li>
                 <li class="sidebar-item">
@@ -50,7 +48,7 @@
                 </li>
             </ul>
             <div class="sidebar-footer">
-                <a href="#" class="sidebar-link">
+                <a href="logout.php" class="sidebar-link">
                     <i class="lni lni-exit"></i>
                     <span>Logout</span>
                 </a>

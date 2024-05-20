@@ -8,13 +8,27 @@ function users_to_html($users) {
         <td class='table-cell'>" . $user["pseudo"] . "</td>
         <td class='table-cell'>Win: 10, Loss: 5</td>
         <td class='table-cell'>" . $user["email"] . "</td>
-        <td class='table-cell'>2024-02-25 08:00 AM</td>
+       
+        <td class='table-cell'>" . $user["is_sub"] . "</td>
+        <td class='table-cell'>" . $user["last_connection"] . "</td>
         <td>
         <a href='up_user.php?id=" . $user["id"] . "' class='btn btn-primary btn-sm'>Modifier</a>
-        <a href='avert.php?id=" . $user["id"] . "' class='btn btn-warning btn-sm'>Avertir</a>
-        <a href='del_user.php?id=" . $user["id"] . "' class='btn btn-danger btn-sm'>Supprimer</a>
-        </td>
-        </tr>";
+        ";
+
+        if ($user['is_ban'] == 0) {
+            echo "
+                <a href='add_ban.php?id=" . $user["id"] . "' class='btn btn-warning btn-sm'>Bannir</a>
+            ";
+        } else {
+            echo "
+                <a href='revoke_ban.php?id=" . $user["id"] . "' class='btn btn-info btn-sm'>Révoquer</a>
+            ";
+        }
+        echo "
+            <a href='del_user.php?id=" . $user["id"] . "' class='btn btn-danger btn-sm'>Supprimer</a>
+            </td>
+        </tr>
+        ";
     }
 }
 
@@ -46,19 +60,14 @@ function newsletter_to_html($newsletters) {
             <td>
                 <a href='send_newsletter.php?id=" . $newsletter["id"] . "' class='btn btn-primary btn-sm'>Envoyer</a>
                 <a href='up_newsletter.php?id=" . $newsletter["id"] . "' class='btn btn-primary btn-sm'>Modifier</a>
+                <a href='see_newsletter.php?id=" . $newsletter["id"] . "' class='btn btn-primary btn-sm'>Voir contenu</a>
                 <a href='del_newsletter.php?id=" . $newsletter['id'] . "' class='btn btn-danger btn-sm'>Supprimer</a>
             </td>
         </tr>";
         
     }
 }
- /*
-        if ($ticket['type'] == "Info") {
-            $color = "warning";
-        } elseif ($ticket['type'] == "Incident") {
-            $color = "info";
-        } 
-        */
+
 function ticket_to_html($tickets) {
     
     foreach ($tickets as $ticket) {

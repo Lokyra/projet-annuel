@@ -1,21 +1,8 @@
-
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-tac-toe Admin</title>
-    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
+    <?php include ('../includes/head.php'); ?>
 </head>
 
 <body>
@@ -27,6 +14,16 @@ error_reporting(E_ALL);
                    
                 </form>
                 <a href="add_captcha.php" class="btn btn-primary btn-sm ms-2">Ajouter</a>
+                <?php
+                session_start();
+                if ($_SESSION['easter_egg'] == 1) {
+                    echo "
+                    <audio id='emmenez' src='../asset/emmenez.mp3' preload='auto'></audio>
+                    <a onclick='play()' class='btn btn-primary btn-sm ms-2 mr-2' type='button'>Jouer l'aventure</a>
+                    <a onclick='pause()' class='btn btn-primary btn-sm ms-2' type='button'>La mettre en pause</a>
+                    ";
+                }
+                ?>
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item dropdown">
@@ -71,11 +68,15 @@ error_reporting(E_ALL);
             </footer>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script src="../js/main.js"></script>
-    <script src="../js/script.js"></script>
+    <?php include('../includes/script.php'); ?>
+    <?php
+    session_start();
+    if ($_SESSION['easter_egg'] == 1) {
+        echo "
+        <script src='../js/emmenez.js'></script>
+        ";
+    }
+    ?>
 
 </body>
 

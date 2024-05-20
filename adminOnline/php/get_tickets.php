@@ -11,3 +11,5 @@ $req->execute();
 $tickets = $req->fetchAll(PDO::FETCH_ASSOC);
 
 ticket_to_html($tickets);
+
+

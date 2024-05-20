@@ -25,16 +25,16 @@ if (isset($_POST['message']) && !empty($_POST['message'])) {
 
     $destination = new SmsDestination(to: $number);
 
-    $message = new SmsTextualMessage(
+    $sentMessage = new SmsTextualMessage(
         destinations: [$destination],
         text: $message,
-        from: "Admin"
+        from: "Admin Help"
     );
 
-    $request = new SmsAdvancedTextualRequest([$message]);
+    $request = new SmsAdvancedTextualRequest([$sentMessage]);
 
     $response = $api->sendSmsMessage($request);
     header("location: ticketing.php?message=Envoie de l'alerte avec succès !&type=success");
 } else {
-    header("location: ticketing.php?message=Erreur lors de l'envoie de l'alerte !&type=danger");
+    header("location: ticketing.php?message=Champ non remplie!!&type=danger");
 }

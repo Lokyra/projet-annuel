@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 require_once "../includes/db_connection.php";
 
-if (!isset($_GET['id']) || empty($_GET['id'])) {
+if (!isset($_GET['id'])) {
     header('location: ticketing.php?message=id inexistant !&type=danger');
     exit;
 }
