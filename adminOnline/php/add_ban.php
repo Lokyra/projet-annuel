@@ -13,7 +13,7 @@
                     <input class="form-control mr-sm-2" type="text" placeholder="search" id="search_input" aria-label="Search">
                    
                 </form>
-                <a href="#" class="btn btn-primary btn-sm ms-2">Add</a>
+                <a href="#" class="btn btn-primary btn-sm ms-2">Ajouter</a>
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item dropdown">

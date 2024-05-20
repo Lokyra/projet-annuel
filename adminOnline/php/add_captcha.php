@@ -10,10 +10,10 @@
         <div class="main">
             <nav class="navbar navbar-expand px-4 py-3">
                 <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="text" placeholder="search" id="search_input" aria-label="Search" oninput="searchCaptchas()">
+                    <input class="form-control mr-sm-2" type="text" placeholder="search" id="search_input" aria-label="Search">
                    
                 </form>
-                <a href="add_captcha.php" class="btn btn-primary btn-sm ms-2">Add</a>
+                <a href="add_captcha.php" class="btn btn-primary btn-sm ms-2">Ajouter</a>
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item dropdown">
