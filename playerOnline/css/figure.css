@@ -4,9 +4,10 @@
   flex-direction: column;
   align-content: flex-start;
   flex-wrap: wrap;
-  max-width: 600px;
+  max-width: 100%;
   margin-top: 30px;
   margin-bottom: 30px;
+  margin: auto ;
   
 }
 .section-padding {

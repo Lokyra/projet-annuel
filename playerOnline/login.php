@@ -1,4 +1,4 @@
-r<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,7 +37,7 @@ r<!DOCTYPE html>
             <div  role="button" class="forgot-password" onclick="alert('Forgot Password?');">Mot de passe oublié?</div>
         </div>
         <div>
-            <button class="login-btn-signin" value="Login">Connection</button>
+            <button class="login-btn-signin" value="Login">Connexion</button>
             <a class="sign-in-btn" value="sign-up" href="signup.php">Inscription</a>
         </div>
     </form>

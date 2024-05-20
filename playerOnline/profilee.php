@@ -1,19 +1,5 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-session_start();
-
-
-require 'includes/db_connection.php';
-
-$req = $bdd->prepare("SELECT pseudo, signup_date, nb_parties, is_sub FROM user where email = :email");
-$req-> execute([
-    'email' => $_SESSION['email']
-]);
-$user = $req->fetch();
-
-
+session_start(); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,22 +29,23 @@ $user = $req->fetch();
             <div class="navigation-item">Regarder</div>
         </nav>
         <div class="action-buttons">
-            <a href="profile.php"class="login-btn"><?php echo $user['pseudo']?></a>
-            <a href="ticket.php"class="sign-up-btn">Contact</a>
+            <a href="login.php"class="login-btn">Login</a>
+            <a href="signup.php"class="sign-up-btn">Sign Up</a>
         </div>
     </header>
     <main>
         <div class="stats-container">
-            <?php   
-               echo "<div class='stats-box'>Date d'inscription : " . $user['signup_date'] . "</div>";
-               echo "<div class='stats-box'>Nombre de parties jouées: " . $user['nb_parties'] . "</div>";
-            ?>
+            <div class="stats-box">Dernière connnection : 1 day</div>
+            <div class="stats-box">Nombre de parties jouer: 128 000</div>
+            <div class="stats-box">Nombre de partie gagné: 1024 000</div>
+            <div class="stats-box">Nombre de partie perdu: 1024 000</div>
         </div>
         <div class="table-wrapper">
             <table class="game-table">
                 <tr>
                     <th>Nom du compte</th>
                     <th>Adresse mail</th>
+                    
                 </tr>
                <?php
                  echo "<tr>";
@@ -68,18 +55,15 @@ $user = $req->fetch();
                ?>
             </table>
             <div style="margin-left: 200px;">
-                    <?php
-                    if ($user['is_sub'] == 0) {
-                        echo "<a href='sub.php'class='login-btn'>S'abonner a la Newsletter</a>";
-                    } else {
-                        echo "<a href='un_sub.php'class='login-btn'>Se desabonner de la Newsletter</a>";
-                    }
-                    ?>
-                
+           
+                <a href="sub.php"class="login-btn">Subscribe to the Newsletter</a>
 
             </div>
+            
         </div>
     </main>
-    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,5 +1,7 @@
 <?php 
-include 'captcha.php'
+session_start();
+include 'captcha.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +37,7 @@ include 'captcha.php'
         <input type="password" name="mot_de_passe" class="user-input" placeholder="Password">
 
         <label for="captcha_question" class="user-input">Veuillez répondre à la question suivante :</label>
-        <p><?php echo htmlspecialchars($selected_question); ?></p>
+        <p><?php echo $_SESSION['question']; ?></p>
         <input type="text" id="captcha_answer" name="captcha_answer" class="user-input" required>
 
         <div class="remember-me">

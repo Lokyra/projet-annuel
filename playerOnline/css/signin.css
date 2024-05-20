@@ -28,14 +28,15 @@
 }
 
 .container {
-  align-items: center;
   justify-content: center;
+  align-items: center;
   display: flex;
   max-width: 656px;
+  margin: auto;
   flex-direction: column;
   font: Roboto, sans-serif;
   font-size: 20px;
-  margin-left: 600px;
+  width: 100%;
 }
 
 .user-input, .password-container {
@@ -56,11 +57,11 @@
   padding: 20px 100px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  align-self: stretch;
+  margin-bottom: 20px;
+  border: 5px solid#EB028E;
   border-radius: 16px;
-  background: linear-gradient(88deg, #0A003E -91.36%, #EB028E 114.99%);
   box-shadow: 0px 11px 30px 15px rgba(10, 0, 62, 0.30);
+  background: linear-gradient(88deg, #0A003E -91.36%, #EB028E 114.99%);
   color: var(--White, #FEFEFE);
   text-align: center;
   font-family: Roboto;
@@ -68,16 +69,15 @@
   font-style: normal;
   font-weight: 900;
   line-height: normal;
+  text-decoration: none;
 }
 .sign-in-btn {
   display: flex;
   padding: 20px 100px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  align-self: stretch;
   border-radius: 16px;
-  border: 5px solid #0A003E;
+  border: 5px solid #EB028E;
   box-shadow: 0px 11px 30px 15px rgba(10, 0, 62, 0.30);
   color: var(--White, #FEFEFE);
   text-align: center;
@@ -108,6 +108,7 @@
   display: flex;
   margin-top: 20px;
   width: 100%;
+  margin-bottom: 10px;
   align-items: center;
   padding: 0 20px;
   justify-content: space-between;

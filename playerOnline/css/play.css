@@ -24,9 +24,11 @@
 }
 
 .play-online {
+    display: flex;
     background: linear-gradient(88deg, #0a003e -91.36%, #eb028e 114.99%);
     box-shadow: 0px 11px 30px 15px rgba(10, 0, 62, 0.3);
     margin-top: -200px;
+    width: 100%;
     color: var(--White, #FEFEFE);
     text-align: center;
     font-family: Roboto;
@@ -49,6 +51,7 @@
     font-weight: 900;
     line-height: normal;
     text-decoration: none;
+    width: 100%;
 }
 
 .play-online:hover, .play-computer:hover {
@@ -56,10 +59,13 @@
 }
 
 .game-title {
+    display: flex;
     color: #fefefe;
     font-size: 80px;
     font-family: "Rubik Mono One", monospace;
-
     margin-left: 950px;
-    margin-top: -600px;  
+    margin-top: -600px;
+    max-width: 100%;
+    justify-content: flex-end;
+    flex-direction: column;
 }
