@@ -54,7 +54,7 @@ $monthCount = $progress->fetch(PDO::FETCH_ASSOC);
                                 <div class="card border-0">
                                     <div class="card-body py-4 bg-light mb-3">
                                         <h5 class="mb-2 fw-bold">
-                                            Members total
+                                            Membres total
                                         </h5>
                                         <p class="mb-2 fw-bold">
                                             <?php echo $userCount['total_users']; ?>
@@ -64,7 +64,7 @@ $monthCount = $progress->fetch(PDO::FETCH_ASSOC);
                                                 +9.0%
                                             </span>
                                             <span class=" fw-bold">
-                                                Since Last Month
+                                                Depuis le dernier mois
                                             </span>
                                         </div>
                                     </div>
@@ -84,7 +84,7 @@ $monthCount = $progress->fetch(PDO::FETCH_ASSOC);
                                                 +9.0%
                                             </span>
                                             <span class="fw-bold">
-                                                Since Last Month
+                                                Depuis le dernier mois
                                             </span>
                                         </div>
                                     </div>
@@ -111,42 +111,7 @@ $monthCount = $progress->fetch(PDO::FETCH_ASSOC);
                                 </div>
                             </div>
                         </div>
-                        <h3 class="fw-bold fs-4 my-3">Online User
-                        </h3>
-                        <div class="row">
-                            <div class="col-12">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr class="highlight">
-                                            <th scope="col">#</th>
-                                            <th scope="col">First</th>
-                                            <th scope="col">Last</th>
-                                            <th scope="col">Pseudo</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Evans</td>
-                                            <td>@mEvans</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Axel</td>
-                                            <td>Blaise</td>
-                                            <td>@Blasito</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Luffy</td>
-                                            <td>Mugiwara</td>
-                                            <td>@Monkey</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                             
                     </div>
                 </div>
             </main>
