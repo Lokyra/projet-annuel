@@ -22,10 +22,7 @@ session_start();
             <span class="logo-text">Tic-tac-toe.com</span>
         </div>
         <nav class="navigation">
-            <div class="navigation-item">Jouer</div>
-            <div class="navigation-item">Puzzles</div>
-            <div class="navigation-item">Apprendre</div>
-            <div class="navigation-item">Regarder</div>
+            <a href="http://tictactoe.ovh:7575/games/tictactoe" class="navigation-item">Jouer</a>
         </nav>
         <div class="action-buttons">
         <?php
@@ -103,8 +100,7 @@ session_start();
         </div>
 
         <section class="play-options-container">
-            <a href="play.html" class="play-online">Jouer en ligne</a>
-            <a href="play-computer.html" class="play-computer">Jouer contre un ordinateur</a>
+            <a href="http://tictactoe.ovh:7575/games/tictactoe" class="play-online">Jouer en ligne</a>  
         </section>
 
         <section>
